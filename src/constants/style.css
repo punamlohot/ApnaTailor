@@ -1,0 +1,18 @@
+
+.otp{
+ margin-left: 150px;
+}
+
+/* .inp{
+    transition: margin-right 2s .5s;
+} */
+
+.profile-inp {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: blue
+  }
+.profile-inp:focus {
+    border-color: green;
+    outline: 0;
+  }

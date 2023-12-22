@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Alert, Row, Col } from "react-bootstrap";
+import { Button, Row, Col } from "react-bootstrap";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import AuthLayout from "./AuthLayout";
@@ -12,7 +12,11 @@ const BottomLink = () => {
       <Col xs={12} className="text-center">
         <p className="text-muted">
           By Signing Up, You Agree To Our{" "}
-          <Link to="#" className="text-primary fw-bold ms-1">
+          <Link
+            to="#"
+            className="fw-bold ms-1"
+            style={{ textDecoration: "none", color: "#6E41E7" }}
+          >
             "Terms & Policies"
           </Link>
         </p>
@@ -37,39 +41,38 @@ const Register = () => {
   return (
     <>
       {/* {userSignUp ? <Navigate to={"/auth/confirm"}></Navigate> : null} */}
+      <div style={{ marginTop: "200px" }}>
+        <AuthLayout bottomLinks={<BottomLink />}>
+          <div className="auth-logo mx-auto">
+            <Link to="/" className="logo logo-dark text-center">
+              <span className="logo-lg">
+                <img src={logoTailor} alt="logo" height="70" width="70" />
+              </span>
+            </Link>
+          </div>
 
-      <AuthLayout bottomLinks={<BottomLink />}>
-        <div className="auth-logo mx-auto">
-          <Link to="/" className="logo logo-dark text-center">
-            <span className="logo-lg">
-              <img src={logoTailor} alt="logo" height="70" width="70" />
-            </span>
-          </Link>
-        </div>
+          <h6 className="h3 mb-3 mt-3 text-center">Sign Up</h6>
 
-        <h6 className="h3 mb-3 mt-3 text-center">Sign Up</h6>
+          <div className="mb-2">Mobile Number</div>
 
-        <div className="mb-2">Mobile Number</div>
+          <PhoneInput
+            className="mb-3"
+            value={phone}
+            defaultCountry={defaultCountry}
+            onChange={(phone) => setPhone(phone)}
+          />
 
-        <PhoneInput
-          className="mb-3"
-          value={phone}
-          defaultCountry={defaultCountry}
-          onChange={(phone) => setPhone(phone)}
-        />
-
-        <div className="mb-3 text-center d-grid">
-          <Button type="submit" onClick={sendOtp}>
-            Send OTP
-          </Button>
-        </div>
-
-        <div className="auth-logo mx-auto">
-          <Link to="#" className="logo logo-dark text-center">
-            Resend OTP
-          </Link>
-        </div>
-      </AuthLayout>
+          <div className="mb-3 text-center d-grid">
+            <Button
+              type="submit"
+              onClick={sendOtp}
+              style={{ backgroundColor: "#6E41E7", borderRadius: "30px" }}
+            >
+              Send OTP
+            </Button>
+          </div>
+        </AuthLayout>
+      </div>
     </>
   );
 };

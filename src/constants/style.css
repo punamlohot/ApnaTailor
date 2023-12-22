@@ -16,3 +16,18 @@
     border-color: green;
     outline: 0;
   }
+
+  /* .docs-image{
+    margin-left:250px;
+  } */
+
+  .step3{
+    margin-left : 750px !important;
+  }
+  .buttons{
+    margin-left:250px;
+  }
+
+  .next-btn{
+    margin-left:700px;
+  }

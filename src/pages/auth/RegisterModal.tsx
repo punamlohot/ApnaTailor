@@ -21,17 +21,36 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
     <>
       <Modal show={openModal} onHide={handleClose} centered>
         <Modal.Header closeButton>
-          <Modal.Title> Register as</Modal.Title>
+          <Modal.Title className="m-2">Register as</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Individual</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+        <Modal.Body>
+          {/* <div className="h6 text-center">Select Your Preference : </div> */}
+          <div className="text-center">
+            {/* <Button
+              variant="light"
+              onClick={handleNext}
+              className="btn-lg mb-2"
+            >
+              Register as an Individual
+            </Button>
+            <br></br> */}
+            <Button
+              variant="light"
+              onClick={handleNext}
+              className="btn-lg mb-2"
+            >
+              Register as an Agency
+            </Button>
+          </div>
+        </Modal.Body>
+        {/* <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose} >
             Close
           </Button>
-          <Button variant="primary" onClick={handleNext}>
+          {/* <Button variant="primary" onClick={handleNext}>
             Next
-          </Button>
-        </Modal.Footer>
+          </Button> */}
+        {/* </Modal.Footer> */}
       </Modal>
     </>
   );
